@@ -500,8 +500,8 @@ class Admin extends CI_Controller {
 					}
 			}
 	}
-	public function hitung_vote(){
-
+	public function hitung_vote($view){
+		$data['view']=$view;
 		$data['no1']=$this->Admin_model->hitung_bem_1();
 		$data['no2']=$this->Admin_model->hitung_bem_2();
 		$data['no3']=$this->Admin_model->hitung_bem_3();
@@ -542,7 +542,7 @@ class Admin extends CI_Controller {
 		// $data['ks15'] = $this->Admin_model->get_data_kandidat_senat("2015");
 		// $data['ks16'] = $this->Admin_model->get_data_kandidat_senat("2016");
 		// $data['ks17'] = $this->Admin_model->get_data_kandidat_senat("2017");
-
+			
 		$this->load->view('admin/hasil-vote',$data);
 		// echo $data;
 		// var_dump($data);

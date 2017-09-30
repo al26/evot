@@ -74,50 +74,63 @@
 </header>
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
-    <section class="sidebar">
-      <ul class="sidebar-menu">
-        <li class="header">Menu Utama</li>
-        <li><a href="<?php echo base_url('hitung-vote'); ?>"><i class="fa fa-pie-chart" aria-hidden="true"></i> <span>Perolehan Suara</span></a></li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-bullhorn" aria-hidden="true"></i> <span>BEM</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('kandidat-bem'); ?>"><i class="fa fa-circle-o"></i> Daftar Paslon BEM</a></li>
-            <li><a href="<?php echo base_url('tambah-ketua-bem'); ?>"><i class="fa fa-circle-o"></i> Tambah Caka BEM</a></li>
-            <li><a href="<?php echo base_url('tambah-wakil-bem'); ?>"><i class="fa fa-circle-o"></i> Tambah Cawaka BEM</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-comments" aria-hidden="true"></i> <span>Senator</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('kandidat-senat'); ?>"><i class="fa fa-circle-o"></i> Daftar Calon Senator</a></li>
-            <li><a href="<?php echo base_url('tambah-senat'); ?>"><i class="fa fa-circle-o"></i> Tambah Calon Senator</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-users" aria-hidden="true"></i> <span>Pemilih</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('daftar-pemilih'); ?>"><i class="fa fa-circle-o"></i> Daftar Pemilih</a></li>
-            <li><a href="<?php echo base_url('tambah-pemilih'); ?>"><i class="fa fa-circle-o"></i> Tambah Pemilih</a></li>
-          </ul>
-        </li>
-      </ul>
-    </section>
-  </aside>
+  <section class="sidebar">
+    <ul class="sidebar-menu">
+      <li class="header">Menu Utama</li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-bullhorn" aria-hidden="true"></i> <span>Perolehan Suara</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="<?php echo base_url('hitung-vote/grafik_bem'); ?>"><i class="fa fa-circle-o"></i> Perolehan Suara BEM</a></li>
+          <li><a href="<?php echo base_url('hitung-vote/grafik_senat_2015'); ?>"><i class="fa fa-circle-o"></i> Perolehan Suara Senat 2015</a></li>
+          <li><a href="<?php echo base_url('hitung-vote/grafik_senat_2016'); ?>"><i class="fa fa-circle-o"></i> Perolehan Suara Senat 2016</a></li>
+          <li><a href="<?php echo base_url('hitung-vote/grafik_senat_2017'); ?>"><i class="fa fa-circle-o"></i> Perolehan Suara Senat 2017</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-bullhorn" aria-hidden="true"></i> <span>BEM</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="<?php echo base_url('kandidat-bem'); ?>"><i class="fa fa-circle-o"></i> Daftar Paslon BEM</a></li>
+          <li><a href="<?php echo base_url('tambah-ketua-bem'); ?>"><i class="fa fa-circle-o"></i> Tambah Caka BEM</a></li>
+          <li><a href="<?php echo base_url('tambah-wakil-bem'); ?>"><i class="fa fa-circle-o"></i> Tambah Cawaka BEM</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-comments" aria-hidden="true"></i> <span>Senator</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="<?php echo base_url('kandidat-senat'); ?>"><i class="fa fa-circle-o"></i> Daftar Calon Senator</a></li>
+          <li><a href="<?php echo base_url('tambah-senat'); ?>"><i class="fa fa-circle-o"></i> Tambah Calon Senator</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-users" aria-hidden="true"></i> <span>Pemilih</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="<?php echo base_url('daftar-pemilih'); ?>"><i class="fa fa-circle-o"></i> Daftar Pemilih</a></li>
+          <li><a href="<?php echo base_url('tambah-pemilih'); ?>"><i class="fa fa-circle-o"></i> Tambah Pemilih</a></li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+</aside>
 
 
   <!-- Content Wrapper. Contains page content -->
