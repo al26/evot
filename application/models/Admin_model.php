@@ -1,7 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Admin_model extends CI_Model {
-    
+
+
     public function daftar_pemilih(){
         $query = $this->db->get('pemilih');
         if($query->num_rows()>=1){
@@ -301,7 +302,7 @@ class Admin_model extends CI_Model {
           }
     }
     //hitung hasil vote dengan no urut 1 senar
-    public function hitung_senat_1(string $angkatan){
+    public function hitung_senat_1($angkatan){
         $where =array(
             'SENAT'=>1,
             'angkatan' => $angkatan
@@ -317,7 +318,7 @@ class Admin_model extends CI_Model {
           }
     }
     //hitung hasil vote dengan no urut 2 senat
-    public function hitung_senat_2(string $angkatan){
+    public function hitung_senat_2($angkatan){
         $where =array(
             'SENAT'=>2,
             'angkatan' => $angkatan
@@ -333,7 +334,7 @@ class Admin_model extends CI_Model {
           }
     }
     //hitung hasil vote dengan no urut 3 senat
-    public function hitung_senat_3(string $angkatan){
+    public function hitung_senat_3($angkatan){
         $where =array(
             'SENAT'=>3,
             'angkatan' => $angkatan
@@ -349,7 +350,7 @@ class Admin_model extends CI_Model {
           }
     }
     //hitung hasil vote dengan no urut 4 senat
-    public function hitung_senat_4(string $angkatan){
+    public function hitung_senat_4($angkatan){
         $where =array(
             'SENAT'=>4,
             'angkatan' => $angkatan
@@ -441,7 +442,7 @@ class Admin_model extends CI_Model {
         }
     }
 
-    public function total_senat_angkatan(string $angkatan) {
+    public function total_senat_angkatan($angkatan) {
         $where = array('angkatan' => $angkatan );
         $this->db->where($where);
         $this->db->from('pemilih');
@@ -454,7 +455,7 @@ class Admin_model extends CI_Model {
         }   
     }    
 
-    public function sudah_senat_angkatan(string $angkatan) {
+    public function sudah_senat_angkatan($angkatan) {
         $where = array(
             'angkatan' => $angkatan,
             'status'   => 'sudah'
@@ -481,7 +482,7 @@ class Admin_model extends CI_Model {
         }       
     }
 
-    public function get_jml_kandidat_senat(string $angkatan){
+    public function get_jml_kandidat_senat($angkatan){
         $where = array('angkatan' => $angkatan );
         $this->db->where($where);
         $this->db->from('kandidat_senat');
@@ -503,7 +504,7 @@ class Admin_model extends CI_Model {
         }
     }
 
-    public function get_data_kandidat_senat($urut, string $angkatan) {
+    public function get_data_kandidat_senat($urut,$angkatan) {
         $where = array('angkatan' => $angkatan, 'no_urut' => $urut);
         $this->db->where($where);
         $query = $this->db->get('kandidat_senat')->result();
