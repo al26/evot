@@ -1,3 +1,15 @@
+<?php 
+  $warna = array('#8B0000', '#008000', '#FF8C00', '#000080');
+  for ($i=1; $i <= $xkandidat_senat15; $i++) { 
+    $suara = $this->Admin_model->hitung_senat($i, "2015");
+    $chart_15[] = array(
+      'label' => "Kandidat $i",
+      'data'  => $suara,
+      'color' => $warna[$i-1]
+    ); 
+  } 
+?>
+
 <!-- Main content -->
 <section class="content">
 
@@ -97,12 +109,7 @@
 <!-- Page script -->
 <script>
   $(function () {
-    var donut15 = [
-      {label: "Calon 1", data: <?php echo "$senat15_1"; ?>, color: "#000080"},
-      {label: "Calon 2", data: <?php echo "$senat15_2"; ?>, color: "#8B0000"},
-      {label: "Calon 3", data: <?php echo "$senat15_3"; ?>, color: "#008000"},
-      {label: "Calon 4", data: <?php echo "$senat15_4"; ?>, color: "#FF8C00"}
-    ];
+    var donut15 = <?php echo json_encode($chart_15); ?>;
 
     $.plot("#donut-senat15", donut15, {
       series: {

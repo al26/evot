@@ -27,61 +27,6 @@
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="<?php echo base_url('assets');?>/dist/css/skins/_all-skins.min.css">
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-  <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          <?php 
-            echo "['Paslon 1', {$no1}],";
-            echo "['Paslon 2', {$no2}],";
-            echo "['Paslon 3', {$no3}]";
-          ?>
-        ]);
-
-        var options = {
-          pieHole: 0.3,
-          title: 'Grafik Perolehan Suara BEM'
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('donut_bem'));
-        chart.draw(data, options);
-      }
-
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart2);
-      function drawChart2() {
-
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          <?php 
-            echo "['Calon 1', {$nos1}],";
-            echo "['Calon 2', {$nos2}],";
-            echo "['Calon 3', {$nos3}],";
-            echo "['Calon 4', {$nos4}]";
-          ?>
-        ]);
-
-        var options = {
-          pieHole: 0.3,
-          title: 'Grafik Perolehan Suara Senat'
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('donut_senat'));
-        chart.draw(data, options);
-      }
-
-    </script> -->
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -201,5 +146,5 @@
         <li><a href="#"><i class="fa fa-pie-chart"></i> Perolehan Suara</a></li>
       </ol>
     </section>
-      <?php $hasil_vote = $view ?>
-    <?php $this->load->view('admin/'.$hasil_vote);?>
+
+    <?php $this->load->view('admin/'.$view);?>

@@ -1,3 +1,15 @@
+<?php 
+  $warna = array('#8B0000', '#008000', '#FF8C00', '#000080');
+  for ($i=1; $i <= $xkandidat_bem; $i++) { 
+    $suara = $this->Admin_model->hitung_bem($i);
+    $chart_bem[] = array(
+      'label' => "Paslon $i",
+      'data'  => $suara,
+      'color' => $warna[$i-1]
+    ); 
+  } 
+?>
+
 <!-- Main content -->
 <section class="content">
 
@@ -104,11 +116,7 @@
 <script>
   $(function () {
 
-    var donutBEM = [
-      {label: "Paslon 1", data: <?php echo "$no1"; ?>, color: "#8B0000"},
-      {label: "Paslon 2", data: <?php echo "$no2"; ?>, color: "#008000"},
-      {label: "Paslon 3", data: <?php echo "$no3"; ?>, color: "#FF8C00"}
-    ];
+    var donutBEM = <?php echo json_encode($chart_bem); ?>;
 
     $.plot("#donut-bem", donutBEM, {
       series: {
