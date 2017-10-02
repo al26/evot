@@ -1,3 +1,15 @@
+<?php 
+  $warna = array('#e74c3c', '#27ae60', '#e67e22', '#3498db', '#9b59b6', '#34495e', '#bdc3c7', '#f39c12');
+  for ($i=1; $i <= $xkandidat_senat17; $i++) { 
+    $suara = $this->Admin_model->hitung_senat($i, "2017");
+    $chart_17[] = array(
+      'label' => "Kandidat $i",
+      'data'  => $suara,
+      'color' => $warna[$i-1]
+    ); 
+  } 
+?>
+
 <!-- Main content -->
 <section class="content">
 
@@ -48,7 +60,7 @@
                       </ul>
                   </td>
                   <td class="nama-senat"><?php echo "$r->nama_kandidat";?></td>
-                  <td class="text-center bigger"><?php echo "$e / $senat_sudah"; ?></td>
+                  <td class="text-center bigger"><?php echo "$e / $senat_sudah17"; ?></td>
                 </tr>
                 <?php } ?>
               </table>
@@ -100,12 +112,7 @@
 <script>
   $(function () {
 
-    var donut17 = [
-      {label: "Calon 1", data: <?php echo "$senat17_1"; ?>, color: "#000080"},
-      {label: "Calon 2", data: <?php echo "$senat17_2"; ?>, color: "#8B0000"},
-      {label: "Calon 3", data: <?php echo "$senat17_3"; ?>, color: "#008000"},
-      {label: "Calon 4", data: <?php echo "$senat17_4"; ?>, color: "#FF8C00"}
-    ];
+    var donut17 = <?php echo json_encode($chart_17); ?>;
 
     $.plot("#donut-senat17", donut17, {
       series: {

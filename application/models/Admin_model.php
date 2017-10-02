@@ -241,130 +241,6 @@ class Admin_model extends CI_Model {
               return false;
           }
     }
-    // hitung hasil vote dengan no urut 1
-    public function hitung_bem_1(){
-        $where =array(
-            'BEM'=>1
-        );
-        $this->db->where($where);
-        $this->db->from('hasil_vote');
-        $query = $this->db->count_all_results();
-
-         if($query>=0){
-             return $query;
-          }else{
-              return false;
-          }
-    }
-    // hitung hasil vote dengan no urut 2
-    public function hitung_bem_2(){
-        $where =array(
-            'BEM'=>2
-        );
-        $this->db->where($where);
-        $this->db->from('hasil_vote');
-        $query = $this->db->count_all_results();
-
-         if($query>=0){
-             return $query;
-          }else{
-              return false;
-          }
-    }
-    // hitung hasil vote dengan no urut 3
-    public function hitung_bem_3(){
-        $where =array(
-            'BEM'=>3
-        );
-        $this->db->where($where);
-        $this->db->from('hasil_vote');
-        $query = $this->db->count_all_results();
-
-         if($query>=0){
-             return $query;
-          }else{
-              return false;
-          }
-    }
-    // hitung hasil vote dengan no urut 4
-    public function hitung_bem_4(){
-        $where =array(
-            'BEM'=>4
-        );
-        $this->db->where($where);
-        $this->db->from('hasil_vote');
-        $query = $this->db->count_all_results();
-
-         if($query>=0){
-             return $query;
-          }else{
-              return false;
-          }
-    }
-    //hitung hasil vote dengan no urut 1 senar
-    public function hitung_senat_1($angkatan){
-        $where =array(
-            'SENAT'=>1,
-            'angkatan' => $angkatan
-        );
-        $this->db->where($where);
-        $this->db->from('hasil_vote');
-        $query = $this->db->count_all_results();
-
-         if($query > 0){
-             return $query;
-          }else{
-              return 0;
-          }
-    }
-    //hitung hasil vote dengan no urut 2 senat
-    public function hitung_senat_2($angkatan){
-        $where =array(
-            'SENAT'=>2,
-            'angkatan' => $angkatan
-        );
-        $this->db->where($where);
-        $this->db->from('hasil_vote');
-        $query = $this->db->count_all_results();
-
-         if($query > 0){
-             return $query;
-          }else{
-              return 0;
-          }
-    }
-    //hitung hasil vote dengan no urut 3 senat
-    public function hitung_senat_3($angkatan){
-        $where =array(
-            'SENAT'=>3,
-            'angkatan' => $angkatan
-        );
-        $this->db->where($where);
-        $this->db->from('hasil_vote');
-        $query = $this->db->count_all_results();
-
-         if($query > 0){
-             return $query;
-          }else{
-              return 0;
-          }
-    }
-    //hitung hasil vote dengan no urut 4 senat
-    public function hitung_senat_4($angkatan){
-        $where =array(
-            'SENAT'=>4,
-            'angkatan' => $angkatan
-        );
-        $this->db->where($where);
-        $this->db->from('hasil_vote');
-        $query = $this->db->count_all_results();
-
-         if($query > 0){
-             return $query;
-          }else{
-              return 0;
-          }
-    }
 
     public function stotal_bem(){
         $this->db->from('pemilih');
@@ -459,6 +335,22 @@ class Admin_model extends CI_Model {
         $where = array(
             'angkatan' => $angkatan,
             'status'   => 'sudah'
+        );
+        $this->db->where($where);
+        $this->db->from('pemilih');
+        $query = $this->db->count_all_results();
+
+        if($query > 0){
+            return $query;
+        }else{
+            return 0;
+        }   
+    }
+
+    public function belum_senat_angkatan($angkatan) {
+        $where = array(
+            'angkatan' => $angkatan,
+            'status'   => 'belum'
         );
         $this->db->where($where);
         $this->db->from('pemilih');

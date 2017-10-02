@@ -29,7 +29,7 @@
 			<label for="username">
 				<!-- <span>Username</span> -->
 
-				<input type="text" id="username" minlength="3" required placeholder="Nama Pengguna" name="uname">
+				<input type="text" id="username" minlength="3" required placeholder="Nama Pengguna" name="uname" autocomplete="off">
 
 				<ul class="input-requirements">
 					<li>Panjang minimum 3 karakter</li>
@@ -40,7 +40,7 @@
 			<label for="password">
 				<!-- <span>Password</span> -->
         
-				<input type="password" id="password" maxlength="100" minlength="8" required placeholder="Kata Sandi" name="pass">
+				<input type="password" id="password" maxlength="100" minlength="8" required placeholder="Kata Sandi" name="pass" autocomplete="off">
 
 				<ul class="input-requirements">
 					<li>Panjang minimum 8 karakter (maksimum 99)</li>
@@ -56,7 +56,7 @@
 		</form>
 	</div>
 	<div class="row">
-		<div class="col-md-4 col-md-offset-4 text-center">
+		<div class="col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4 text-center">
 			<div class="form-footer">
 				<h4>&copy; Pemiltas FKM 2017 | All Right Reserved</button></h4>
 			</div>

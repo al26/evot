@@ -502,29 +502,6 @@ class Admin extends CI_Controller {
 	}
 	public function hitung_vote($view){
 		$data['view']=$view;
-		$data['no1']=$this->Admin_model->hitung_bem_1();
-		$data['no2']=$this->Admin_model->hitung_bem_2();
-		$data['no3']=$this->Admin_model->hitung_bem_3();
-		$data['no4']=$this->Admin_model->hitung_bem_4();
-
-		// for ($i=1; $i < $this->Admin_model->get_jml_kandidat_bem(); $i++) { 
-		// 	$data['no.$i'] = $this->Admin_model->hitung_bem($i);
-		// }
-
-		$data['senat15_1']=$this->Admin_model->hitung_senat_1("2015");
-		$data['senat15_2']=$this->Admin_model->hitung_senat_2("2015");
-		$data['senat15_3']=$this->Admin_model->hitung_senat_3("2015");
-		$data['senat15_4']=$this->Admin_model->hitung_senat_4("2015");
-
-		$data['senat16_1']=$this->Admin_model->hitung_senat_1("2016");
-		$data['senat16_2']=$this->Admin_model->hitung_senat_2("2016");
-		$data['senat16_3']=$this->Admin_model->hitung_senat_3("2016");
-		$data['senat16_4']=$this->Admin_model->hitung_senat_4("2016");
-
-		$data['senat17_1']=$this->Admin_model->hitung_senat_1("2017");
-		$data['senat17_2']=$this->Admin_model->hitung_senat_2("2017");
-		$data['senat17_3']=$this->Admin_model->hitung_senat_3("2017");
-		$data['senat17_4']=$this->Admin_model->hitung_senat_4("2017");	
 
 		$data['bem_total'] = $this->Admin_model->stotal_bem();
 		$data['bem_sudah'] = $this->Admin_model->sudah_bem();
@@ -533,15 +510,14 @@ class Admin extends CI_Controller {
 		$data['senat_sudah'] = $this->Admin_model->sudah_senat();
 		$data['senat_belum'] = $this->Admin_model->belum_senat();
 
+		$data['senat_sudah15'] = $this->Admin_model->sudah_senat_angkatan("2015");
+		$data['senat_sudah16'] = $this->Admin_model->sudah_senat_angkatan("2016");
+		$data['senat_sudah17'] = $this->Admin_model->sudah_senat_angkatan("2017");
+
 		$data['xkandidat_bem'] = $this->Admin_model->get_jml_kandidat_bem();
 		$data['xkandidat_senat15'] = $this->Admin_model->get_jml_kandidat_senat("2015");
 		$data['xkandidat_senat16'] = $this->Admin_model->get_jml_kandidat_senat("2016");
 		$data['xkandidat_senat17'] = $this->Admin_model->get_jml_kandidat_senat("2017");
-
-		// $data['kbem'] = $this->Admin_model->get_data_kandidat_bem();
-		// $data['ks15'] = $this->Admin_model->get_data_kandidat_senat("2015");
-		// $data['ks16'] = $this->Admin_model->get_data_kandidat_senat("2016");
-		// $data['ks17'] = $this->Admin_model->get_data_kandidat_senat("2017");
 			
 		$this->load->view('admin/hasil-vote',$data);
 		// echo $data;
