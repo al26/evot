@@ -32,7 +32,7 @@
 
 <header class="main-header">
 <!-- Logo -->
-<a href="<?php echo base_url('assets');?>/index2.html" class="logo">
+<a href="" class="logo">
   <span class="logo-lg"><b>Pemiltas</b> FKM</span>
 </a>
 <!-- Header Navbar: style can be found in header.less -->
@@ -81,7 +81,7 @@
     <li class="header">Menu Utama</li>
     <li class="treeview">
       <a href="#">
-        <i class="fa fa-bullhorn" aria-hidden="true"></i> <span>Perolehan Suara</span>
+        <i class="fa fa-pie-chart" aria-hidden="true"></i> <span>Perolehan Suara</span>
         <span class="pull-right-container">
           <i class="fa fa-angle-left pull-right"></i>
         </span>
@@ -142,10 +142,10 @@
       Daftar Pemiliih Tetap
         <small>semua data</small>
       </h1>
-      <ol class="breadcrumb">
+      <!-- <ol class="breadcrumb">
         <li><a href="<?php echo base_url('dashboard'); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active"><a href="<?php echo base_url('hitung-vote'); ?>">data pemilih</a></li>
-      </ol>
+      </ol> -->
     </section>
 
     <!-- Main content -->

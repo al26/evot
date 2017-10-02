@@ -1,5 +1,5 @@
 <?php 
-  $warna = array('#8B0000', '#008000', '#FF8C00', '#000080');
+  $warna = array('#e74c3c', '#27ae60', '#e67e22', '#3498db', '#9b59b6', '#34495e', '#bdc3c7', '#f39c12');
   for ($i=1; $i <= $xkandidat_bem; $i++) { 
     $suara = $this->Admin_model->hitung_bem($i);
     $chart_bem[] = array(

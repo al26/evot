@@ -1,5 +1,5 @@
 <?php 
-  $warna = array('#8B0000', '#008000', '#FF8C00', '#000080');
+  $warna = array('#e74c3c', '#27ae60', '#e67e22', '#3498db', '#9b59b6', '#34495e', '#bdc3c7', '#f39c12');
   for ($i=1; $i <= $xkandidat_senat16; $i++) { 
     $suara = $this->Admin_model->hitung_senat($i, "2016");
     $chart_16[] = array(
@@ -63,7 +63,7 @@
                       </ul>
                   </td>
                   <td class="nama-senat"><?php echo "$r->nama_kandidat";?></td>
-                  <td class="text-center bigger"><?php echo "$e / $senat_sudah"; ?></td>
+                  <td class="text-center bigger"><?php echo "$e / $senat_sudah16"; ?></td>
                 </tr>
                 <?php } ?>
               </table>
