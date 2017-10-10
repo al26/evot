@@ -403,6 +403,22 @@ class Admin_model extends CI_Model {
         foreach ($query as $res) {
             return $res;
         }
-        // return $query;
+    }
+
+    public function reset(){
+        $this->db->trans_start();
+        $this->db->query('DELETE * FROM hasil_vote');
+        $this->db->query('ALTER TABLE hasil_vote AUTO_INCREMENT 1');
+        $this->db->query('DELETE * FROM kandidat_bem');
+        $this->db->query('ALTER TABLE kandidat_bem AUTO_INCREMENT 1');
+        $this->db->query('DELETE * FROM kandidat_senat');
+        $this->db->query('ALTER TABLE kandidat_senat AUTO_INCREMENT 1');
+        $this->db->trans_complete();      
+
+        if ($this->db->trans_status() === TRUE)
+        {
+            echo "Data pada tabel hasil_vote, kandidat_bem, dan kandidat_senat telah dikosongkan";
+        } 
+        
     }
 }
