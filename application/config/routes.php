@@ -65,6 +65,10 @@ $route['kandidat-ketua'] = 'admin/valid_ketua_bem';
 $route['hitung-vote/(:any)'] = 'admin/hitung_vote/$1';
 $route['kandidat-senat'] = 'admin/daftar_kandidat_senat';
 $route['dashboard/logout'] = 'login/admlogout';
+$route['reset_data'] = 'admin/reset_data_table';
+$route['reset_pemilih'] = 'admin/reset_data_pemilih';
+
+
 
 // user
 $route['login'] = 'login/user';

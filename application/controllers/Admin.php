@@ -523,5 +523,32 @@ class Admin extends CI_Controller {
 		// echo $data;
 		// var_dump($data);
 	}
+	public function reset_data_table(){
+		$query = $this->Admin_model->reset();
+		if($query==true){
+			$data['error']= "data telah terhapus";
+			$data['pemilih'] = $this->Admin_model->daftar_pemilih(); 
+			$this->load->view('admin/daftar_pemilih',$data);
+		}else{
+			$data['error']= "data tidak terhapus";
+			$data['pemilih'] = $this->Admin_model->daftar_pemilih(); 
+			$this->load->view('admin/daftar_pemilih',$data);
+			
+		}
+	}
+	public function reset_data_pemilih(){
+		$query = $this->Admin_model->reset_pemilih();
+		if($query==true){
+			$data['error']= "data telah terhapus";
+			$data['pemilih'] = $this->Admin_model->daftar_pemilih(); 
+			$this->load->view('admin/daftar_pemilih',$data);
+		}else{
+			$data['error']= "data tidak terhapus";
+			$data['pemilih'] = $this->Admin_model->daftar_pemilih(); 
+			$this->load->view('admin/daftar_pemilih',$data);
+			
+		}
+	}
+
 
 }
