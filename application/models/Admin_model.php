@@ -246,10 +246,10 @@ class Admin_model extends CI_Model {
         $this->db->from('pemilih');
         $query = $this->db->count_all_results();
 
-        if($query > 0){
+        if($query >= 0){
             return $query;
         }else{
-            return 0;
+            return false;
         }
     }
 
@@ -259,10 +259,10 @@ class Admin_model extends CI_Model {
         $this->db->from('pemilih');
         $query = $this->db->count_all_results();
 
-        if($query > 0){
+        if($query >= 0){
             return $query;
         }else{
-            return 0;
+            return false;
         }
     }
     
@@ -272,10 +272,10 @@ class Admin_model extends CI_Model {
         $this->db->from('hasil_vote');
         $query = $this->db->count_all_results();
 
-        if($query > 0){
+        if($query >= 0){
             return $query;
         }else{
-            return 0;
+            return false;
         } 
     }
 
@@ -285,10 +285,10 @@ class Admin_model extends CI_Model {
         $this->db->from('hasil_vote');
         $query = $this->db->count_all_results();
 
-        if($query > 0){
+        if($query >= 0){
             return $query;
         }else{
-            return 0;
+            return false;
         } 
     }
 
@@ -298,10 +298,10 @@ class Admin_model extends CI_Model {
         $this->db->from('pemilih');
         $query = $this->db->count_all_results();
 
-        if($query > 0){
+        if($query >= 0){
             return $query;
         }else{
-            return 0;
+            return false;
         }
     }
 
@@ -311,10 +311,10 @@ class Admin_model extends CI_Model {
         $this->db->from('pemilih');
         $query = $this->db->count_all_results();
 
-        if($query > 0){
+        if($query >= 0){
             return $query;
         }else{
-            return 0;
+            return false;
         }
     }
 
@@ -340,10 +340,10 @@ class Admin_model extends CI_Model {
         $this->db->from('pemilih');
         $query = $this->db->count_all_results();
 
-        if($query > 0){
+        if($query >= 0){
             return $query;
         }else{
-            return 0;
+            return false;
         }   
     }
 
@@ -367,10 +367,10 @@ class Admin_model extends CI_Model {
         $this->db->from('kandidat_bem');
         $query = $this->db->count_all_results();
 
-        if($query > 0){
+        if($query >= 0){
             return $query;
         }else{
-            return 0;
+            return false;
         }       
     }
 
@@ -380,10 +380,10 @@ class Admin_model extends CI_Model {
         $this->db->from('kandidat_senat');
         $query = $this->db->count_all_results();
 
-        if($query > 0){
+        if($query >= 0){
             return $query;
         }else{
-            return 0;
+            return false;
         }       
     }    
 
