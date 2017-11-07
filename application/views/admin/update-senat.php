@@ -128,6 +128,19 @@
         <li><a href="<?php echo base_url('tambah-pemilih'); ?>"><i class="fa fa-circle-o"></i> Tambah Pemilih</a></li>
       </ul>
     </li>
+    <li class="header">Pengaturan Data</li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-gears" aria-hidden="true"></i> <span> Reset </span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="<?php echo base_url('reset_pemilih'); ?>"><i class="fa fa-circle-o"></i> Reset Data Pemilih </a></li>
+          <li><a href="<?php echo base_url('reset_data'); ?>"><i class="fa fa-circle-o"></i> Reset Other</a></li>
+        </ul>
+      </li>
   </ul>
 </section>
 </aside>

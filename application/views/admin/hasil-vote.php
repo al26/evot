@@ -1,9 +1,21 @@
 <?php 
+  if($bem_sudah!=null && $bem_total!=null && $senat_sudah!=null && $senat_total!=null){
   $bem_sudah_persen = round($bem_sudah/$bem_total, 2)*100;
   $bem_belum_persen = 100 - $bem_sudah_persen;
-
   $senat_sudah_persen = round($senat_sudah/$senat_total, 2)*100;
   $senat_belum_persen = 100 - $senat_sudah_persen;
+  }else{
+    $bem_sudah_persen = null;
+    $bem_belum_persen = 100 - $bem_sudah_persen;
+    $senat_sudah_persen = null;
+    $senat_belum_persen= 100 - $senat_sudah_persen;
+  }
+
+  // $bem_sudah_persen = round($bem_sudah/$bem_total, 2)*100;
+  // $bem_belum_persen = 100 - $bem_sudah_persen;
+  // $senat_sudah_persen = round($senat_sudah/$senat_total, 2)*100;
+  // $senat_belum_persen = 100 - $senat_sudah_persen;
+  
 ?>
 
 <!DOCTYPE html>
@@ -129,6 +141,19 @@
         <ul class="treeview-menu">
           <li><a href="<?php echo base_url('daftar-pemilih'); ?>"><i class="fa fa-circle-o"></i> Daftar Pemilih</a></li>
           <li><a href="<?php echo base_url('tambah-pemilih'); ?>"><i class="fa fa-circle-o"></i> Tambah Pemilih</a></li>
+        </ul>
+      </li>
+      <li class="header">Pengaturan Data</li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-gears" aria-hidden="true"></i> <span> Reset </span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="<?php echo base_url('reset_pemilih'); ?>"><i class="fa fa-circle-o"></i> Reset Data Pemilih </a></li>
+          <li><a href="<?php echo base_url('reset_data'); ?>"><i class="fa fa-circle-o"></i> Reset Other</a></li>
         </ul>
       </li>
     </ul>

@@ -5,7 +5,7 @@ class Admin_model extends CI_Model {
 
     public function daftar_pemilih(){
         $query = $this->db->get('pemilih');
-        if($query->num_rows()>=1){
+        if($query->num_rows()>=0){
             return $query->result_array();
         }else{
             return false;
@@ -246,10 +246,10 @@ class Admin_model extends CI_Model {
         $this->db->from('pemilih');
         $query = $this->db->count_all_results();
 
-        if($query > 0){
+        if($query >= 0){
             return $query;
         }else{
-            return 0;
+            return false;
         }
     }
 
@@ -259,10 +259,10 @@ class Admin_model extends CI_Model {
         $this->db->from('pemilih');
         $query = $this->db->count_all_results();
 
-        if($query > 0){
+        if($query >= 0){
             return $query;
         }else{
-            return 0;
+            return false;
         }
     }
     
@@ -272,10 +272,10 @@ class Admin_model extends CI_Model {
         $this->db->from('hasil_vote');
         $query = $this->db->count_all_results();
 
-        if($query > 0){
+        if($query >= 0){
             return $query;
         }else{
-            return 0;
+            return false;
         } 
     }
 
@@ -285,10 +285,10 @@ class Admin_model extends CI_Model {
         $this->db->from('hasil_vote');
         $query = $this->db->count_all_results();
 
-        if($query > 0){
+        if($query >= 0){
             return $query;
         }else{
-            return 0;
+            return false;
         } 
     }
 
@@ -298,10 +298,10 @@ class Admin_model extends CI_Model {
         $this->db->from('pemilih');
         $query = $this->db->count_all_results();
 
-        if($query > 0){
+        if($query >= 0){
             return $query;
         }else{
-            return 0;
+            return false;
         }
     }
 
@@ -311,10 +311,10 @@ class Admin_model extends CI_Model {
         $this->db->from('pemilih');
         $query = $this->db->count_all_results();
 
-        if($query > 0){
+        if($query >= 0){
             return $query;
         }else{
-            return 0;
+            return false;
         }
     }
 
@@ -340,10 +340,10 @@ class Admin_model extends CI_Model {
         $this->db->from('pemilih');
         $query = $this->db->count_all_results();
 
-        if($query > 0){
+        if($query >= 0){
             return $query;
         }else{
-            return 0;
+            return false;
         }   
     }
 
@@ -367,10 +367,10 @@ class Admin_model extends CI_Model {
         $this->db->from('kandidat_bem');
         $query = $this->db->count_all_results();
 
-        if($query > 0){
+        if($query >= 0){
             return $query;
         }else{
-            return 0;
+            return false;
         }       
     }
 
@@ -380,10 +380,10 @@ class Admin_model extends CI_Model {
         $this->db->from('kandidat_senat');
         $query = $this->db->count_all_results();
 
-        if($query > 0){
+        if($query >= 0){
             return $query;
         }else{
-            return 0;
+            return false;
         }       
     }    
 
@@ -407,18 +407,33 @@ class Admin_model extends CI_Model {
 
     public function reset(){
         $this->db->trans_start();
-        $this->db->query('DELETE * FROM hasil_vote');
+        $this->db->query('DELETE FROM hasil_vote');
         $this->db->query('ALTER TABLE hasil_vote AUTO_INCREMENT 1');
-        $this->db->query('DELETE * FROM kandidat_bem');
+        $this->db->query('DELETE FROM kandidat_bem');
         $this->db->query('ALTER TABLE kandidat_bem AUTO_INCREMENT 1');
-        $this->db->query('DELETE * FROM kandidat_senat');
+        $this->db->query('DELETE FROM kandidat_senat');
         $this->db->query('ALTER TABLE kandidat_senat AUTO_INCREMENT 1');
         $this->db->trans_complete();      
 
         if ($this->db->trans_status() === TRUE)
         {
-            echo "Data pada tabel hasil_vote, kandidat_bem, dan kandidat_senat telah dikosongkan";
-        } 
+            return true;
+        }else{
+            return false;
+        }
+        
+    }
+    public function reset_pemilih(){
+        $this->db->trans_start();
+        $this->db->query('DELETE FROM pemilih');
+        $this->db->trans_complete();      
+
+        if ($this->db->trans_status() === TRUE)
+        {
+            return true;
+        }else{
+            return false;
+        }
         
     }
 }
